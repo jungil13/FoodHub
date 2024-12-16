@@ -1,13 +1,7 @@
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open('static-v1').then((cache) => {
-      return cache.addAll([
-        '/image.png', // local resources
-        '/img/icons/tumblr_image.gif' // local version of the image
-      ]);
-    })
-  );
-});
+    console.log('Service Worker: Installed');
+  });
+  
   self.addEventListener('fetch', (event) => {
     console.log('Service Worker: Fetching', event.request.url);
   });
